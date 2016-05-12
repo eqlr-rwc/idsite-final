@@ -15,9 +15,35 @@
     <link rel="stylesheet" href="styles/main.css">
 
     <script src="scripts/vendor.js"></script>
+    
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			showAdFrame();
+		});
+	
+		$(document).ready(function() {
+			$(window).resize(function() {
+				showAdFrame();
+			});
+		});
+	
+		function showAdFrame() {
+			var frame = document.getElementById('adframe');
+			if (frame) {
+				if (window.outerWidth > 960) {
+					frame.style.display = "block";
+				} else {
+					frame.style.display = "none";
+				}
+			}
+		}
+	</script>
+    
   </head>
   <body ng-app="stormpathIdpApp">
     <script type="text/ng-template" id="views/login.html">
+      <table><tr><td>
       <div class="view login-view" ng-show="ready">
         <div class="box row fullSize">
           <div class="email-password-area  col-xs-12" ng-class="[hasProviders ? 'small col-sm-8' : 'large col-sm-12']">
@@ -62,7 +88,7 @@
                 </div>
               </div>
               <div>
-                <button class="col-sm-12 login btn btn-login btn-sp-green bottom-margin" type="submit" ng-disabled="submitting">SIGN IN</button>
+                <button class="col-sm-12 login btn btn-login btn-sp-green bottom-margin5" type="submit" ng-disabled="submitting">SIGN IN</button>
               </div>
                 <div class="group-remember-me">
                   <table class="fullSize"><tr>
@@ -76,18 +102,21 @@
           </div>
 
         </div>
-
       </div>
-
+      </td><td>
+        <iframe id="adframe" src="https://www.equilar.com/product-login-iframe" class="adframe" style="overflow: hidden;">
+          hello
+        </iframe>
+      </td></tr></table>
 
 
     </script>
     <script type="text/ng-template" id="views/forgot.html">
-      <div class="view forgot-view" ng-show="ready">
+      <div class="view forgot-view box-size" ng-show="ready">
         <div class="box row">
           <div class="fullSize bottom-margin">
             <div class="fullSize bottom-margin">
-              <span ng-show="!sent && !retry">Password Reset</span>
+              <span ng-show="!sent && !retry" class="heavy-font">Password Reset</span>
               <span ng-show="retry">Reset link has expired</span>
               <span ng-show="sent">Please check your mail.</span>
 
@@ -134,15 +163,15 @@
             </form>
           </div>
         </div>
-        <a ng-show="!sent" class="to-login" href="#" wd-back-to-login>Back to Log In</a>
+        <a ng-show="!sent" class="to-login top-margin5" href="#" wd-back-to-login>Back to Log In</a>
       </div>
     </script>
     <script type="text/ng-template" id="views/reset.html">
-      <div class="view reset-view" ng-show="status!=='loading'">
+      <div class="view reset-view box-size" ng-show="status!=='loading'">
         <div class="box row">
-          <div class="col-sm-12">
+          <div class="fullSize bottom-margin">
             <div class="header">
-              <span ng-show="status=='verified'">Password Reset</span>
+              <span ng-show="status=='verified'"  class="heavy-font">Password Reset</span>
               <span ng-show="status=='failed'">Sorry! Something went wrong.</span>
               <span ng-show="status=='success'">You have successfully changed your password.</span>
             </div>
@@ -169,11 +198,9 @@
               <div class="form-group group-password" form-group>
                 <label class="col-sm-4">New Password</label>
                 <div class="col-sm-8">
-                  <input type="password" class="form-control" name="password" form-control password-policy-validation validate-on-blur/>
+                  <input type="password" class="form-control bottom-margin" name="password" form-control password-policy-validation validate-on-blur/>
                   <div ng-include="'views/password-error-messages.html'"></div>
                 </div>
-                <br>
-                <label></label>
               </div>
 
               <div class="form-group group-confirm-password" form-group>
@@ -291,9 +318,13 @@
         <img ng-show="logoUrl" class="logo img-responsive" ng-src="images/Logo.svg"/>
       </div>
       <div ng-show="inError" ng-include="'views/error.html'"></div>
-      <div ng-hide="inError" ng-view="">
+      <div ng-hide="inError" ng-view="" align="center">
         <!-- this will be replaced a the view, as determined by the route config in app.js -->
       </div>
+    </div>
+    <div class="footerContainer bottom-margin"  align="center">
+    <label class="footerLbl1">Questions?</label>&nbsp;&nbsp;&nbsp;
+    <label class="footerLbl2">Contact Us</label>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
