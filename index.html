@@ -305,14 +305,14 @@
           <h2 class="text-center">Sorry! There was a problem.</h2>
           <hr>
             <p class="alert">
-              Please use your browser's back button to return to the previous page, then try again 
-              or visit <a href="http://www.equilar.com/login.html">login page</a>.
-              If this problem persists, please provide this error information to the support team:
+              You will be redirected to the <a href="http://www.equilar.com/login">login page</a> after a few moments...<br>
             </p>
 
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            If this problem persists, please provide this error information to the <a href="mailto:support@equilar.com">support team</a>:
             <div class="well text-center">
               <div class="" ng-repeat="e in errors">
-                <strong>{{e}}</strong>
+                {{e}}<br>
               </div>
             </div>
 
@@ -342,7 +342,7 @@
 
     <div class="container" ng-controller="ErrorCtrl" ng-cloak>
       <div class="logo-container">
-        <img ng-show="logoUrl" class="logo img-responsive" ng-src="images/Logo.svg"/>
+        <img ng-show="logoUrl" class="logo img-responsive" ng-src="{{logoUrl}}"/>
       </div>
       <div ng-show="inError" ng-include="'views/error.html'"></div>
       <div ng-hide="inError" ng-view="" align="center">
