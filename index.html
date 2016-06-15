@@ -289,9 +289,16 @@
           <p>&nbsp;</p>
           <h2 class="text-center">Sorry! There was a problem.</h2>
           <hr>
-            <p class="alert">
-              You will be redirected to the <a href="http://www.equilar.com/login">login page</a> after a few moments...<br>
-            </p>
+            <div ng-show="customRedirect">
+              <p class="alert">
+                You will be redirected to an alternative <a href="{{toRedirectPage}}">login page</a> after a few moments...<br>
+              </p>
+            </div>
+            <div ng-show="!customRedirect">
+              <p class="alert">
+                You will be redirected to the <a href="{{toRedirectPage}}">login page</a> after a few moments...<br>
+              </p>
+            </div>
 
             &nbsp;&nbsp;&nbsp;&nbsp;
             If this problem persists, please provide this error information to the <a href="mailto:support@equilar.com">support team</a>:
