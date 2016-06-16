@@ -30,6 +30,16 @@
 	
 		function showInfoFrame() {
 			var frame = document.getElementById('infoFrame');
+			var frameSrc = frame.src;
+			console.log("frame: "+frame);
+			console.log("frame src: "+frameSrc);
+			
+			if (!frameSrc || frameSrc == ''){
+				console.log("dont show frame... ");
+				frame.style.display = "none";
+				return;
+			}
+			
 			if (frame) {
 				if (window.outerWidth > 960) {
 					frame.style.display = "block";
@@ -131,8 +141,7 @@
         </div>
       </div>
       </td><td>
-        <iframe id="infoFrame" src="https://www.equilar.com/product-login-iframe" class="infoFrame">
-          hello
+        <iframe id="infoFrame" src="{{infoFrameUrl}}" class="infoFrame">
         </iframe>
       </td></tr></table>
 
