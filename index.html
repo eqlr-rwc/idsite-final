@@ -331,26 +331,25 @@
     <script type="text/ng-template" id="views/faq.html">
       <div class="view faq-view box-size">
 
-      	<div class="faq-box" >
+      	<div class="faq-box">
 
-
+      		<br> <br>
 
       		<p>
-      			<b>I'm an existing customer visiting the new login page for the
-      				first time. Why must I reset my password?</b><br> We increased our
-      			security and moved our user identity /authentication to the cloud.
-      			Since all passwords are encrypted and not known to us, we could not
-      			transport the passwords with the rest of the account data. By
-      			resetting your password you will be creating a password for the first
-      			time under our new and improved security framework.
+      			<b class="faq_question">I'm an existing customer visiting the new
+      				login page for the first time. Why must I reset my password?</b><br>
+      			We increased our security and moved our user identity /authentication
+      			to the cloud. Since all passwords are encrypted and not known to us,
+      			we could not transport the passwords with the rest of the account
+      			data. By resetting your password you will be creating a password for
+      			the first time under our new and improved security framework.
       		</p>
 
       		<p>
-      			<b>How do I reset my password?</b><br>
+      			<b class="faq_question">How do I reset my password?</b><br>
       		<ul>
-      			<li>From the log in page click on the text <i>Forgot
-      					Password?</i> underneath the sign in button.
-      			</li>
+      			<li>From the log in page click on the text 'Forgot Password?'
+      				underneath the sign in button.</li>
       			<li>A box should appear labeled 'Email'. Type the email address
       				associated with your account into this box and click SEND.</li>
       			<li>Check the mail inbox for the email address typed above. You
@@ -368,31 +367,37 @@
       		</p>
 
       		<p>
-      			<b>I'm seeing an error that mentions enterprise.stormpath.io.
-      				What is Stormpath?</b><br> Stormpath is the user identity service
-      			that we use for authentication during the log in process. You can
-      			read about their security practices here:
-      			https://stormpath.com/product/password_security.
+      			<b class="faq_question">I'm seeing an error that mentions
+      				enterprise.stormpath.io. What is Stormpath?</b><br> Stormpath is
+      			the user identity service that we use for authentication during the
+      			log in process. You can read about their security practices here: <a
+      				href="https://stormpath.com/product/password_security">https://stormpath.com/product/password_security</a>.
       		</p>
 
       		<p>
-      			<b>What browsers are supported?</b><br> We recommend Chrome for
-      			the best experience although Firefox and Internet Explorer version 10
-      			and above are also supported. If you are trying to access Insight and
-      			are using another browser or an older browser version that may not be
-      			supported, you can also try logging in using an alternative login
-      			page found <a href="https://insight.equilar.com/app/login/login2.jsp">here</a>.
+      			<b class="faq_question">What browsers are supported?</b><br> We
+      			recommend Chrome for the best experience although Firefox and
+      			Internet Explorer version 10 and above are also supported. If you are
+      			trying to access Insight and are using another browser or an older
+      			browser version that may not be supported, you can also try logging
+      			in using an alternative login page found <a
+      				href="https://insight.equilar.com/app/login/login2.jsp">here</a>.
       		</p>
 
       		<p>
-      			<b>If I have more questions, who can I contact?</b><br> Please
-      			reach out to <a href="mailto:support@equilar.com">support@equilar.com</a>.
-      			We will be happy to assist you with any questions you may have.
+      			<b class="faq_question">If I have more questions, who can I
+      				contact?</b><br> Please reach out to <a
+      				href="mailto:support@equilar.com">support@equilar.com</a>. We will
+      			be happy to assist you with any questions you may have.
       		</p>
-      		
-      		<br><br>
-      		
+
+      		<br> <br>
+
       	</div>
+
+      	<a class="to-login top-margin5" href="#" wd-back-to-login>Back to
+      		Log In</a>
+
       </div>
 
     </script>
