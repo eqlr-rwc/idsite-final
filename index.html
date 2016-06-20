@@ -328,6 +328,82 @@
 
 
     </script>
+    <script type="text/ng-template" id="views/faq.html">
+      <div class="view faq-view box-size">
+
+      	<div class="faq-box">
+
+      		<br> <br>
+
+      		<p>
+      			<b class="faq_question">I'm an existing customer visiting the new
+      				login page for the first time. Why must I reset my password?</b><br>
+      			We increased our security and moved our user identity /authentication
+      			to the cloud. Since all passwords are encrypted and unknown to us, we
+      			could not transport the passwords with the rest of the account data.
+      			By resetting your password you will be creating a password for the
+      			first time within our new and improved security framework.
+      		</p>
+      		<br>
+
+      		<p>
+      			<b class="faq_question">How do I reset my password?</b><br> To
+      			reset your password please follow the steps below:
+      		<ul>
+      			<li>From the login page click on the text 'Forgot Password?'
+      				underneath the sign in button.</li>
+      			<li>A box should appear labeled 'Email'. Type the email address
+      				associated with your account and click SEND.</li>
+      			<li>Check your inbox for the email address above. You should
+      				have received an email from Equilar containing a reset password
+      				link. Click on this link or copy/paste the link into your browser's
+      				address bar to open up a dedicated reset password page.</li>
+      			<li>On the reset password page, type a new password into the
+      				first input box and confirm the password by typing it a second time.
+      				Click SUBMIT once done.</li>
+      			<li>Congratulations, you have now reset your password! You
+      				should be able to log in using your email address and the new
+      				password you have just created.</li>
+      		</ul>
+      		</p>
+      		<br>
+
+      		<p>
+      			<b class="faq_question">I see a message about
+      				enterprise.stormpath.io. What is Stormpath?</b><br> Stormpath is
+      			the user identity service we use for authentication during the log in
+      			process. You can read about their security practices here: <a
+      				href="https://stormpath.com/product/password_security">https://stormpath.com/product/password_security</a>.
+      		</p>
+      		<br>
+
+      		<p>
+      			<b class="faq_question">What browsers are supported?</b><br> We
+      			recommend Chrome for the best experience although Firefox and
+      			Internet Explorer version 10 and above are also supported. If you are
+      			trying to access Insight and are using another browser or an older
+      			browser version that may not be supported, you can also try using our
+      			alternative login page: <a
+      				href="https://insight.equilar.com/app/login/login2.jsp">https://insight.equilar.com/app/login/login2.jsp</a>.
+      		</p>
+      		<br>
+
+      		<p>
+      			<b class="faq_question">If I have more questions, who can I
+      				contact?</b><br> Please reach out to <a
+      				href="mailto:support@equilar.com">support@equilar.com</a>. We will
+      			be happy to assist you with any questions you may have.
+      		</p>
+      		<br> <br> <br>
+
+      	</div>
+
+      	<a class="to-login top-margin5" href="#" wd-back-to-login>Back to
+      		Log In</a>
+
+      </div>
+
+    </script>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -342,7 +418,7 @@
       </div>
     </div>
     <div class="footerContainer bottom-margin"  align="center">
-    <label class="footerLbl1">Questions?</label>&nbsp;&nbsp;&nbsp;
+    <a class="footerLbl1" href="#faq">Frequently Asked Questions</a>&nbsp;&nbsp;&nbsp;
     <a href="http://www.equilar.com" class="footerLbl2">Contact Us</a>
     </div>
 
