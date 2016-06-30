@@ -153,7 +153,7 @@
         </div>
       </div>
       </td><td>
-        <iframe id="infoFrame" ng-src="{{infoFrameUrl}}" class="infoFrame">
+        <iframe id="infoFrame" ng-src="https://www.equilar.com/product-login-iframe" class="infoFrame">
         </iframe>
       </td></tr></table>
 
@@ -433,7 +433,7 @@
 
     <div class="container" ng-controller="ErrorCtrl" ng-cloak>
       <div class="logo-container">
-        <img id="appLogo" ng-show="logoUrl" class="logo img-responsive" ng-src="{{logoUrl}}"/>
+        <img id="appLogo" ng-show="logoUrl" class="logo img-responsive" ng-src="{{logoUrl}}" src="{{logoUrl}}"/>
       </div>
       <div ng-show="inError" ng-include="'views/error.html'"></div>
       <div ng-hide="inError" ng-view="" align="center">
