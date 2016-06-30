@@ -42,21 +42,24 @@
 		}
 		
 		function setInfoFrame() {
-			var logo = document.getElementById('appLogo');
+			var frameType = document.getElementById('frameType');
 			var frame = document.getElementById('infoFrame');
-			var logoSrc = logo.src;
+			var type = frameType.innerHTML;
 			var frameSrc = frame.src;
-			console.log("logo Src: "+logoSrc);
+			console.log("frame type: "+type);
 			console.log("frame src: "+frameSrc);
 			
-			if (!logoSrc || logoSrc == ''){
-				console.log("no logo... ");
+			if (!type || type == ''){
+				console.log("no frame type... ");
 				return;
 			}
-			if (logoSrc.endsWith('logo-insight.svg') || logoSrc.endsWith('logo-survey.svg')){
+			
+			if (type == 'insight-frame'){
 				console.log("show insight frame... ");
 				frame.src = 'https://www.equilar.com/product-login-iframes/insight';
-				//frame.style.display = "none";
+			} else if (type == 'insight-frame'){
+				console.log("show boardedge frame... ");
+				frame.src = 'https://www.equilar.com/product-login-iframes/boardedge';
 			}
 			
 		}
@@ -444,6 +447,8 @@
     <a class="footerLbl1" href="#faq">Frequently Asked Questions</a>&nbsp;&nbsp;&nbsp;
     <a href="http://www.equilar.com" class="footerLbl2">Contact Us</a>
     </div>
+    
+	<div id="frameType" style="display: none;width: 0px;">{{infoFrameType}}</div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
