@@ -19,6 +19,7 @@
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
+			setInfoFrame();
 			showInfoFrame();
 		});
 	
@@ -30,16 +31,6 @@
 	
 		function showInfoFrame() {
 			var frame = document.getElementById('infoFrame');
-			var frameSrc = frame.src;
-			console.log("frame: "+frame);
-			console.log("frame src: "+frameSrc);
-			console.log("expected frame src: {{infoFrameUrl}}");
-			
-			if (!frameSrc || frameSrc == ''){
-				console.log("dont show frame... ");
-				frame.style.display = "none";
-				return;
-			}
 			
 			if (frame) {
 				if (window.outerWidth > 960) {
@@ -48,6 +39,26 @@
 					frame.style.display = "none";
 				}
 			}
+		}
+		
+		function setInfoFrame() {
+			var logo = document.getElementById('appLogo');
+			var frame = document.getElementById('infoFrame');
+			var logoSrc = logo.src;
+			var frameSrc = frame.src;
+			console.log("logo Src: "+logoSrc);
+			console.log("frame src: "+frameSrc);
+			
+			if (!logoSrc || logoSrc == ''){
+				console.log("no logo... ");
+				return;
+			}
+			if (logoSrc.endsWith('logo-insight.svg') || logoSrc.endsWith('logo-survey.svg')){
+				console.log("show insight frame... ");
+				frame.src = 'https://www.equilar.com/product-login-iframes/insight';
+				//frame.style.display = "none";
+			}
+			
 		}
 	</script>
 	
@@ -422,7 +433,7 @@
 
     <div class="container" ng-controller="ErrorCtrl" ng-cloak>
       <div class="logo-container">
-        <img ng-show="logoUrl" class="logo img-responsive" ng-src="{{logoUrl}}"/>
+        <img id="appLogo" ng-show="logoUrl" class="logo img-responsive" ng-src="{{logoUrl}}"/>
       </div>
       <div ng-show="inError" ng-include="'views/error.html'"></div>
       <div ng-hide="inError" ng-view="" align="center">
