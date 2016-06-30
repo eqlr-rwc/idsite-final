@@ -44,22 +44,17 @@
 		function setInfoFrame() {
 			var frameType = document.getElementById('frameType').innerHTML;
 			var frame = document.getElementById('infoFrame');
-			console.log("frame type: "+frameType);
-			console.log("frame src: "+frame.src);
+			
+			var frameSrc = 'https://www.equilar.com/product-login-iframe';
 			
 			if (!frameType || frameType == ''){
-				console.log("no frame type... ");
-				return;
-			}
-			
-			if (frameType == 'insight-frame'){
-				console.log("show insight frame... ");
-				frame.src = 'https://www.equilar.com/product-login-iframes/insight';
+			} else if (frameType == 'insight-frame'){
+				frameSrc = 'https://www.equilar.com/product-login-iframes/insight';
 			} else if (type == 'insight-frame'){
-				console.log("show boardedge frame... ");
-				frame.src = 'https://www.equilar.com/product-login-iframes/boardedge';
+				frameSrc = 'https://www.equilar.com/product-login-iframes/boardedge';
 			}
 			
+			frame.src = frameSrc;
 		}
 	</script>
 	
@@ -154,7 +149,7 @@
         </div>
       </div>
       </td><td>
-        <iframe id="infoFrame" ng-src="https://www.equilar.com/product-login-iframe" class="infoFrame">
+        <iframe id="infoFrame" src="" class="infoFrame">
         </iframe>
       </td></tr></table>
 
