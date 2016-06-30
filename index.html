@@ -42,19 +42,17 @@
 		}
 		
 		function setInfoFrame() {
-			var frameType = document.getElementById('frameType');
+			var frameType = document.getElementById('frameType').innerHTML;
 			var frame = document.getElementById('infoFrame');
-			var type = frameType.innerHTML;
-			var frameSrc = frame.src;
-			console.log("frame type: "+type);
-			console.log("frame src: "+frameSrc);
+			console.log("frame type: "+frameType);
+			console.log("frame src: "+frame.src);
 			
-			if (!type || type == ''){
+			if (!frameType || frameType == ''){
 				console.log("no frame type... ");
 				return;
 			}
 			
-			if (type == 'insight-frame'){
+			if (frameType == 'insight-frame'){
 				console.log("show insight frame... ");
 				frame.src = 'https://www.equilar.com/product-login-iframes/insight';
 			} else if (type == 'insight-frame'){
@@ -448,7 +446,7 @@
     <a href="http://www.equilar.com" class="footerLbl2">Contact Us</a>
     </div>
     
-	<div id="frameType" style="display: none;width: 0px;">{{infoFrameType}}</div>
+	<div id="frameType" style="visibility:hidden; width: 0px;">{{infoFrameType}}</div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
