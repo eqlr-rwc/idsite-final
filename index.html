@@ -18,11 +18,12 @@
     
 	<script type="text/javascript">
 	
-		$(document).ready(function() {
+		$(window).load(function() {
+			setInfoFrame();
 			showInfoFrame();
 		});
 	
-		$(document).ready(function() {
+		$(window).load(function() {
 			$(window).resize(function() {
 				showInfoFrame();
 			});
@@ -30,6 +31,7 @@
 	
 		function showInfoFrame() {
 			var frame = document.getElementById('infoFrame');
+			
 			if (frame) {
 				if (window.outerWidth > 960) {
 					frame.style.display = "block";
@@ -37,6 +39,22 @@
 					frame.style.display = "none";
 				}
 			}
+		}
+		
+		function setInfoFrame() {
+			var frameType = document.getElementById('frameType').innerHTML;
+			var frame = document.getElementById('infoFrame');
+			
+			var frameSrc = 'https://www.equilar.com/product-login-iframe';
+			
+			if (!frameType || frameType == ''){
+			} else if (frameType == 'insight-frame'){
+				frameSrc = 'https://www.equilar.com/product-login-iframes/insight';
+			} else if (frameType == 'boardedge-frame'){
+				frameSrc = 'https://www.equilar.com/product-login-iframes/boardedge';
+			}
+			
+			frame.src = frameSrc;
 		}
 	</script>
 	
@@ -131,8 +149,7 @@
         </div>
       </div>
       </td><td>
-        <iframe id="infoFrame" src="https://www.equilar.com/product-login-iframe" class="infoFrame">
-          hello
+        <iframe id="infoFrame" src="" class="infoFrame">
         </iframe>
       </td></tr></table>
 
@@ -423,6 +440,8 @@
     <a class="footerLbl1" href="#faq">Frequently Asked Questions</a>&nbsp;&nbsp;&nbsp;
     <a href="http://www.equilar.com" class="footerLbl2">Contact Us</a>
     </div>
+    
+	<div id="frameType" style="display: none; width: 0px;">{{infoFrameType}}</div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
