@@ -44,6 +44,9 @@
 		function setInfoFrame() {
 			var frameType = document.getElementById('frameType').innerHTML;
 			var frame = document.getElementById('infoFrame');
+			if (!frame) {
+				return;
+			}
 			
 			var frameSrc = 'https://www.equilar.com/product-login-iframes/boardedge';
 			
@@ -184,7 +187,7 @@
                 </div>
               </div>
               <div class="alert alert-danger" ng-show="unknownError">
-                <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+                <strong>Sorry, an error occurred.  Please reload the page and try again.</strong>
                 <br/>
                 <br/>
                 <p>{{unknownError}}</p>
@@ -193,7 +196,7 @@
             </form>
           </div>
         </div>
-        <a ng-show="!sent" class="to-login top-margin5" href="#" wd-back-to-login>Back to Log In</a>
+        <a ng-show="!sent" class="to-login top-margin5" href="#" ng-href="{{loginPageUrl}}" wd-back-to-login>Back to Log In</a>
       </div>
     </script>
     <script type="text/ng-template" id="views/reset.html">
@@ -417,7 +420,7 @@
 
       	</div>
 
-      	<a class="to-login top-margin5" href="#" wd-back-to-login>Back to
+      	<a class="to-login top-margin5" href="#" ng-href="{{loginPageUrl}}" wd-back-to-login>Back to
       		Log In</a>
 
       </div>
